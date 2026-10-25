@@ -1,0 +1,56 @@
+# ==========================================
+# MINI PEDIDOS - CONFIGURACION GENERAL
+# ==========================================
+spring:
+  application:
+    name: mini-pedidos
+
+  # ==========================================
+  # RABBITMQ - CONEXION
+  # ==========================================
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+# ==========================================
+# SQS / ELASTICMQ
+# ==========================================
+sqs:
+  endpoint: ${SQS_ENDPOINT:http://localhost:9324}
+  queue-url: ${SQS_QUEUE_URL:http://localhost:9324/000000000000/pedidos-mini}
+
+# ==========================================
+# RABBITMQ - NOMBRES DE COLAS, EXCHANGES Y BINDINGS
+# (Configuracion centralizada - Indicador 1 EP3)
+# ==========================================
+rabbitmq:
+  queues:
+    pedidos: pedidos
+    notificaciones: notificaciones
+    reportes: reportes
+    pedidos-dlq: pedidos.dlq
+    notificaciones-dlq: notificaciones.dlq
+    reportes-dlq: reportes.dlq
+
+  exchanges:
+    pedidos-direct: pedidos.direct
+    pedidos-topic: pedidos.topic
+    pedidos-dlx: pedidos.dlx
+    notificaciones-dlx: notificaciones.dlx
+    reportes-dlx: reportes.dlx
+
+  bindings:
+    pedidos-routing-key: pedidos.crear
+    notificaciones-routing-key: notificaciones.enviar
+    reportes-routing-key: reportes.generar
+    pedidos-dlq-routing-key: pedidos.error
+    notificaciones-dlq-routing-key: notificaciones.error
+    reportes-dlq-routing-key: reportes.error
+
+server:
+  port: 8080

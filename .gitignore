@@ -1,0 +1,40 @@
+# ==========================================
+# GITIGNORE GLOBAL - CLOUDP2
+# ==========================================
+
+# Java / Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.class
+
+# Node / React
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# IDEs & Editors
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+.springBeans
+.sts4-cache
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & Temporales
+*.log
+*.tmp
+*.bak
+*.pem

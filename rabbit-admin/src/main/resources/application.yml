@@ -1,0 +1,14 @@
+# ==========================================
+# RABBIT ADMIN - Microservicio Administrador
+# ==========================================
+spring:
+  application:
+    name: rabbit-admin
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+
+server:
+  port: 8081
