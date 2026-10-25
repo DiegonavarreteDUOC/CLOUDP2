@@ -1,5 +1,5 @@
 # Mini Pedidos Cloud Native — Arquitectura de Microservicios con RabbitMQ y AWS SQS
-**Evaluación Parcial N° 3 — Desarrollo Cloud Native I (DSY1107) — Duoc UC**
+**Evaluación Parcial N° 2 — Desarrollo Cloud Native I (DSY1107) — Duoc UC**
 
 Sistema desacoplado de procesamiento asíncrono de pedidos compuesto por microservicios en **Java 21 / Spring Boot**, mensajería distribuida con **RabbitMQ**, integración con **AWS SQS** (simulado con ElasticMQ) y un frontend en **React** con autenticación **AWS Cognito (IDaaS)**.
 
